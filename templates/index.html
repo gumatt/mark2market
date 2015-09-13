@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Shoutout</title>
+</head>
+<body>
+<form action="/" method="post">
+    <label for="name">name:</label> <input id="name" type="text" name="name"/>
+    <label for="description">description:</label> <input id="description" type="text" name="description"/>
+    <input type="submit" value="Submit"/>
+</form>
+{% for account in accounts %}
+    {{ account.name }} - {{ account.description }} <br>
+{% endfor %}
+</body>
+</html>

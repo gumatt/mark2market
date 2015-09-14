@@ -1,1 +1,1 @@
-web: python mark2market.py
+web: python mark2market.py $PORT

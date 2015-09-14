@@ -1,1 +1,1 @@
-web: python mark2market.py $PORT
+web: gunicorn mark2market:app $PORT

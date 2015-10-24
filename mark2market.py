@@ -1,10 +1,12 @@
 import os
 
 from flask import Flask, render_template, request, redirect
-
 from pymongo import MongoClient
 
-MONGO_URL = os.environ.get('MONGOHQ_URL')
+MONGO_URL = os.environ.get('MONGO_URL_DEV')
+if MONGO_URL is None:
+    MONGO_URL = 'mongodb://localhost:27017/'
+
 client = MongoClient(MONGO_URL)
 
 # Specify the database
@@ -31,6 +33,6 @@ def hello_world():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
     # port = int(os.environ.get("PORT", 5000))
     # app.run(host='0.0.0.0', port=port)

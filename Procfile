@@ -1,1 +1,1 @@
-web: gunicorn mark2market:app $PORT
+web: gunicorn mark2market:app --log-file -
